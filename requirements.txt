@@ -2,3 +2,7 @@ bitsandbytes
 datasets
 accelerate
 loralib
+einops
+logging
+auto_gptq
+langchain
