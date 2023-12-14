@@ -6,10 +6,10 @@ from model_setup import setup_trainer
 from transformers import AutoTokenizer
 
 def main():
-    model = prepare_model()
+    model = prepare_model("vinai/PhoGPT-7B5-Instruct")
     print_trainable_parameters(model)
     data = load_and_process_data()
-    tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-7b1")
+    tokenizer = AutoTokenizer.from_pretrained("allenai/longformer-base-4096")
     processed_data = tokenize_data(data, tokenizer)
     print(processed_data['train']["prediction"][:5])
 

@@ -3,11 +3,14 @@ import torch.nn as nn
 from transformers import AutoModelForCausalLM
 from peft import LoraConfig, get_peft_model
 
-def prepare_model():
+def prepare_model(model_path):
     model = AutoModelForCausalLM.from_pretrained(
-        "bigscience/bloom-7b1",
+        model_path,
         load_in_8bit=True,
         device_map='auto',
+        torch_dtype=torch.float16,
+        low_cpu_mem_usage=True,
+        trust_remote_code=True,
     )
 
     for param in model.parameters():
