@@ -1,0 +1,4 @@
+bitsandbytes
+datasets
+accelerate
+loralib
